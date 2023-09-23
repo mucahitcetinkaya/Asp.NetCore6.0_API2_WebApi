@@ -1,0 +1,11 @@
+dotnet new --help
+
+dotnet new --list
+
+dotnet new webapi -o hello_world_cli
+
+dir
+
+cd hello_world_cli
+
+dotnet run
