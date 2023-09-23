@@ -1,0 +1,23 @@
+ASP.Net Core Empty actýk 
+
+
+2.5 ortam deðiþkenleri 
+
+development staging production
+
+HelloWebAPi i calýstýrýnca uygulama direk calýsýyor 
+IIS ile calýstýrýnca calýsmýyor mesela swagger yazýnca en sonuna calýstý 
+bu ayar properties kýsmýnda launchsettings.json dosyasýnda yapýlýyor bu ayarlar 
+HelloWebAPi kýsmýnda launchUrl bilgisi verdik uygulama acýlýr acýlmaz direk swagger acýlýyor 
+IIS de vermediðimiz için acýlmýyor yazmak zorunda kalýyoruz
+
+launchsetting e gidip ayarlarýný yaptýk 
+
+program.cs den geldim
+
+ortamlarý ayýrdýgýn gibi launchsetting dosyalarýný da ayýrabilirsin
+
+
+launchsetting.Development.json
+launchsetting.Production.json
+ gibi 
