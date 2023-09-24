@@ -1,0 +1,3 @@
+3. logging
+3.2 proje olusturma
+asp.net core web api
