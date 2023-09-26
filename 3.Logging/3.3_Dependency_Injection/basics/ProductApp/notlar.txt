@@ -1,0 +1,10 @@
+﻿3. logging
+3.2 proje olusturma
+asp.net core web api
+
+Models klas�r�n� ekleyelim 
+
+Product class act�k �d name verdik
+product model varsa productcontroller olmas� laz�m 
+
+controllers klas�r� sag t�k add controller api den bos controller sectik diger notlar orada
