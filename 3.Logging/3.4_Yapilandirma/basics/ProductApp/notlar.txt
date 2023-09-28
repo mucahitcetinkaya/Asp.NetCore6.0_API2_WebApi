@@ -1,0 +1,11 @@
+﻿3. logging
+3.4 yapılandırma
+
+dependency ınjection yaptık şimdide configure logging yani yapılandırma ile 
+yapılandırma işlemlerini yapacagız 
+
+yapılandırma da genelde program.cs kullanılır
+
+yerleşik olarak gelen logging ifadelerini yapılandıracagız
+
+program.cs e gidelim

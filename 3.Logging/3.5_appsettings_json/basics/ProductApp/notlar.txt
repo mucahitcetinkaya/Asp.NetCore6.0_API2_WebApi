@@ -1,0 +1,40 @@
+﻿3. logging
+3.5 appsettings json
+
+daha onceden properties de ki launchsetting de farklı dosyalar acarak ayarları degişik yerlerde yazabileceğimizi göstermiştik
+
+aynı işlemi appsettings de de yapabiliriz
+
+appsettings.Development
+
+appsettings.Production
+bunları yine grupladı 
+
+launchsetting e gelince bir productapp IIS expres adında 2 tane profil var 
+ortam değişliklerini 
+birini development moda digerini production moda aldım 
+program cs de swaggeri if den cıkarttım 2 modda da calıssın diye 
+
+istediğimiz şey productapp profil iis ile calıstırınca
+warning seviyesinde log alması iis de calıstırınca information seviyesinde log alması 
+production development ikisindede swagger calısacak if i kaldırdık
+appsetting de production ı warning yaptık öyle calısacak
+appsetting de development i information yaptık öyle calısacak
+uygulayı calıstırıp execute edince info olarak calıstı console da yazdı productapp olarak
+
+durdurup iis seviyesine gecelim 
+
+iis de console acılmayabilir debug moda bakacagız
+
+
+buradaki olay launchsetting deki profile gore appsettings de modları yazıp bir projeyi farklı farklı modlarda kullanabiliyoruz
+
+ProductApp profilini development yaptık appsetting.Development.json acarak onu ozelleştirdik information modda calısmasını sagladık yani console da info yazıyor 
+IIS Express profilini Production yaptık appseting.Production.json da warning yaptık sadece burda calısmasını sagladık 
+program.cs de swagger ın if ini kaldırdık 2 modda da swagger calısıyor
+birinde console acılıyor digerinde output debug modda calısıyor
+
+en son da controller de post yazdık get post olarak yazdık
+iis de
+get information da calısırken post warning de calısıyor
+productapp de get post ikiside information de calısıyor
