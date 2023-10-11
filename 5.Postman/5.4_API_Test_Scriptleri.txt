@@ -1,0 +1,85 @@
+5.4_API_Test_Scriptleri
+
+postman ı acınca herhangi bir istege gelince 
+altında alanlar var 
+alanların birinde test yazıyor buradan testlerimizi yapacagız 
+
+test kısmına gelip yazalım 
+
+pm.test("Status is 200", funchion() {});
+
+boyle yazıp status koda göre test edebilirsin
+funchion süslü parantez içine neyi test etmek istiyorsun onu yazman lazım
+
+mesela GET istek attın All Books dedin diyelim
+status code 200 ok oluyor 
+
+buna göre test yazarsan 
+
+pm.test("Status is 200", funchion() {
+   pm.response.to.have.status(200)
+});
+
+bu testlerden birisi farklı bişey yazıp ona göre de test edebilirsin
+
+boyle de tanımlama yapabilirsin arrowfunchion
+
+pm.test("Status is 200", () => {
+   pm.response.to.have.status(200)
+});
+
+
+mesela tek id ile get olan istege bir test yazarken olan id değilde
+olmayan bir id ile arattıgında 
+donüş 404 not found oluyor 
+
+ama test kısmını 404 mü diye kontrol edebilirsin mesela 
+orası evet 404 olumlu der
+
+yani response un olumlu olumsuz olmasına bakmıyor test sen ne istiyorsun ona bakıyor
+
+
+test kısmında sagda asagıya dogru gidince bir linkler var
+otomatik olarak test kodu yazıyor 
+
+status code : code 200 yazıyor ona basınca otomatik olarak yazar 
+200 olarak gelir değiştir sen 
+
+pm.test("Status is 404", funchion() {
+   pm.response.to.have.status(404)
+});
+
+böyle yazarsan işlem olumsuz ama test olumlu olur 
+
+silerken 204 no content ile donersin delete
+
+eklediğinde 201 created ile döner post
+
+secilen kaynagın hepsini guncelleme 200 ile döner put
+
+kismi guncelleme sadece title gibi 200 döner patch
+
+
+mesela birden fazla isteğin vardır 
+
+toplu olarak yazmak istersin 200 400 404 gibi toplu test etmek
+
+pm.test("Status is 200 or 400", funchion() {
+   pm.expect(pm.response.code).to.be.oneOf([200,400,404])
+});
+
+böyle yazarakta toplu test edebilirsin
+
+birden fazla isteğin olur hepsini bir kerede test etmek de mümkün 
+
+Books üzerinde 3 noktaya tıkla Run Collection a bas 
+isteklerin orada cıkacak istediklerini sec 
+yanda kac kere istek atacak o yazıyor 
+
+Run configuration
+Iterations 1
+
+1 kere hepsini calıstır demek oluyor
+
+neyin ne oldugunu toplu olarak orda görebilirsin 
+

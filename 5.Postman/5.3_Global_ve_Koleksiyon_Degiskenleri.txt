@@ -1,0 +1,95 @@
+5.3_Global_ve_Koleksiyon_Degiskenleri
+
+sol menude 1 3 5 500 istek olabilir kayıt edilen 
+bu isteklerde ortak olan bir kısım olabilir
+tekrar tekrar yazmak yerine bunları fonksiyon olarak yazabilirsin
+
+mesela 
+
+https://localhost:7201/api/books da ki 
+
+https://localhost:7201/ bu kısım hepsinde aynı genelde 
+
+bunu fonksiyon olarak yazalım 
+buna global olarak tanımlamak deniyor 
+bu kaynak değişebilir tek tek değiştirmek yerine boyle fonksiyona alıp
+tek bir yerde değiştirmek daha kolay olur 
+
+istediğin kısmı sec 
+
+set a variable e tıkla 
+
+set as a new variable 
+
+değişkene isim ver mesela baseUrl
+value sectiğin kısım değiştirebilirsin
+scope Global 
+set variable e tıkla 
+
+artık local kısmı boyle yazıyor {{baseUrl}}
+
+boyle yazarak istediğin yerde kullanabilirsin
+ 
+sadece url kısmını değil istediğin kısmı da tanımlama yapabilirsin
+
+mesela id kısmını sec atama yap bookId gibi 
+cagırmak için {{bookId}} yazınca sectiğin id gelir
+scope kısmını collection sectik sadece Books içinde cagırmak için
+global yaparsan hepsinde geçer
+
+bu değişkenleri body kısmında da kullabilirsin 
+
+bu degerleri değiştirmek istediğinde 
+
+Books üzerine gel Variable de bookId yazıyor onu istediğin olarak değiştir
+
+Persist All a tıkla Save e tıkla 
+
+değişmiş oldu 
+
+global değişkenlerde ise ekranın sağ ustunde 
+x in altında değişebilir bu yeri sonradan
+
+Environment quick look yazıyor buna bas edit e bas 
+
+baseUrl orda cıkıyor istediğinle değiştirebilirsin
+
+Persist All Save e bas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

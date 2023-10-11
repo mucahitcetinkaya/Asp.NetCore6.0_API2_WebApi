@@ -1,0 +1,48 @@
+5.5_Random_Fonksiyonlar
+
+post un body sine gelelim 
+
+onceden boyleydi 
+
+{
+  "id":1,
+  "title":"İstanbul",
+  "price":150
+}
+
+şimdi böyle
+
+{
+  "id":{{$randomInt}},
+  "title":"{{$randomWords}}",
+  "price":{{$randomPrice}}
+}
+
+bunu calıstırdıgımız da tek tek farklı farklı random olarak veri yuklecek
+
+bunun güzel yani su mesela tek tek yukleceksin ama 
+bana 100 500 50000 adet kaynak gerekiyor belki tek tek yuklemek olmaz 
+bunun için 
+
+Books sekmesine gir 3 noka ya bas 
+
+Run collection a bas 
+
+Run configuration da Iterations a 100 yaz post u sec
+
+otomatik olarak post u calıstıracak 100 kere
+post ta ekleme oldugu için 100 adet kaynak eklemiş olacak
+
+
+
+
+
+
+
+
+
+
+
+
+
+

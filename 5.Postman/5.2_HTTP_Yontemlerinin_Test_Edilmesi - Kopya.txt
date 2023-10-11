@@ -1,0 +1,164 @@
+5.2_HTTP Yöntemlerinin Test Edilmesi
+
+postman sitesinden indirebilirsin 
+
+kayıt olarak paylasılan api lara ulasabilir calıstıgınız api ları kayıt edip baska bir yerden bakabilirsiniz
+
+indirip giriş yaptıgınız da home sekmesinin altında 
+
+ürünle ilgili güncellemeler
+paylasılan api ler vs görebilirsiniz
+
+workspace sekmesine gir create workspace e tıkla 
+
+name ve acıklama ver isteğe göre gorunurluk ayarla
+
+ASP.NER Core Web API
+
+BTK Akademi ASP.NET Core Web API
+
+Personal kişisel 
+
+create workspace 
+
+yan sol da artı işaretine tıkla 
+
+collection olustur 
+
+isim ver solda add request e tıkla 
+
+uygulamanı calıstır orada yazan local adresini kayıt et
+
+save etmeyi unutma
+
+işlemin türünü yandan secebilirsin get put vs 
+
+sonra uygulamada türüne göre kayıt et get put vs 
+
+mesela 
+
+Books/All Books
+
+GET https://localhost:7201/api/books gibi
+
+send a basınca calısır
+
+save et kayıt olur artık tekrar yazmak zorunda kalmazsın ordan cagırabilirsin
+
+Sol menude Books altında
+
+GET All Books yazıyor 3 nokta var ona bas 
+duplicate yazıyor cogalt demek 
+
+bununuda One Book olarak kayıt edelim buna id vereceğiz 1 kitap cagıracak
+
+GET https://localhost:7201/api/books/1
+
+save et send e bas 
+
+1 nolu kitap gelecek 
+
+duplicate etmek yerine books ustune gelip add request e basıp sıfırdan da istek gonderebilirsin
+
+kayıt ekleyelim post işlemi yapalım 
+
+POST https://localhost:7201/api/books
+
+post yaparken bir gövde gerekiyor body kısmına girelim
+
+raw ve json kısmını secelim 
+
+{
+   "id":4,
+   "title":"İstanbul",
+   "price":500
+}
+
+yazalım 
+
+yeni kayıt ekledik send diyince 
+
+all books kısmına send diyelim bakalım kayıt olmus mu 
+
+illa all books a bakmana gerek yok altta status code yazıyor 
+201 created ordan da anlayabilirsin 
+
+
+PUT gönderelim güncelleme işlemi yapacagız 
+
+PUT https://localhost:7201/api/books/2
+
+{
+   "id":2,
+   "title":"Mesneviden ders aldım",
+   "price":1500
+}
+
+2. kayıt normal de baska bişey böyle yaparak guncelleme işlemi yapıyoruz
+
+save sent
+
+DELETE silme işlemi yapalım 
+
+DELETE https://localhost:7201/api/books/2
+
+2. kayıtı silelim siliyor oldu 
+
+204 no content olarak dönüş yapıyor
+
+DELETE silme işlemi yapalım hepsini silsin
+
+DELETE https://localhost:7201/api/books
+
+hepsini silecek siliyor oldu 
+
+204 no content olarak dönüş yapıyor
+boş array [] olarak donuyor
+
+
+PATCH ile devam edelim kismi bir yeri guncelleme
+
+PATCH https://localhost:7201/api/books/2
+[
+  {
+     "op":"replace",
+     "path":"title",
+     "value":"Mesnevi"
+  }
+]
+dizi içine almayı unutma
+2. nolu kitabın sadece adını değişitirdi kismi değişiklik oluyor buda 
+
+değişiklik yapınca yeniden baslatmak için programı durdur yeniden calıstır
+context içindeki kayıtlardan calıstıgı için ordan calısmaya devam eder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
