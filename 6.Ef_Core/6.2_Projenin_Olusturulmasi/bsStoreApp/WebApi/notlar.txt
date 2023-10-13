@@ -1,0 +1,3 @@
+proje olusturduk
+models book class olusturduk
+ilk acıldıgında gelen class ve controller i sildik

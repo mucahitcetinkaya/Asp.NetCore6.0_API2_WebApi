@@ -1,0 +1,45 @@
+entity framework core EfCore
+
+.net geliştiricilerinin .net nesnelerini kullanarak bir veri tabanıyla çalışmasına olanak tanır
+
+class larını interface yapılarını kullanarak bir veri tabanıyla calısmasına olanak saglayan bir teknoloji olarak özetlenebilir
+
+alt yapısında adonet calısır 
+
+orm teknolojisi olarak düşünülebilir
+
+hazırlamıs oldugumuz class ları veri tabanına yansıtmak için kullanılır 
+
+genellikle yazılması gereken veri erişim kodunun çoğuna olan ihtiyacı ortadan kaldırır
+
+bu teknoloji veriye erişirken veriyle ugrasırken veri manipulasyonu yaparken 
+
+çok sayıda ihtiyac duyulan kodun otomatik olarak üretilmesini saglar 
+
+bundan dolayı veriye erişim ef core ile basitleşir 
+
+entity framework (EfCore) microsoft tarafından geliştirilmiştir ORM çatılarındandır
+
+bu yapıda 2 tane yaklasım var 
+
+Code First Database First
+
+Repositories adında bir klasör acıp ilerleyelim 
+
+içinde bir class acıp RepositoryContext adını verelim 
+
+class ı actıgında DbContext ten miras vermen lazım DbContext i kullanması için
+
+EfCore paketini yuklemen lazım 
+
+istersen nuget uzerınden yukle istersen 
+
+nuget sitesine gir cli kodunu bul terminal ile yukle 
+
+dotnet add package Microsoft.EntityFrameworkCore --version 6.0.1
+
+ne işimize yaracak dbcontext 
+
+mesela bizim varlıklarımız olacak Book mesela 
+
+bu Book class ını sql de tablo olarak gostermeye yarayan kısım dbcontext oluyor 

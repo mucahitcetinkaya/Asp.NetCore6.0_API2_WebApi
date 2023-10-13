@@ -1,0 +1,27 @@
+migration alalım
+
+mig alabilmek için desing paketini yuklememiz lazım 
+
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.1
+
+bundan sonra teminale girip migration almamız lazım 
+yani class i veri tabanına aktarmamız gerekiyor 
+
+dotnet ef migrations add mucahitDb --startup-project ../WebApi
+bunu googleden buldum microsoft un kendi sitesi efcore uzerınden mig aldıgın için böyle yazman lazım
+
+Migrations diye bir klasör geldi 
+
+şimdi bunu veri tabanına yansıtmak için update yapmamız lazım 
+
+dotnet ef database update --startup-project ../WebApi
+
+sqlite a baglı bir veri tabanımız oldu su anda 
+
+Migrations klasörü içinde bir snapshot ekran ekran çekimi gibi bir türkçesi oluyor
+bunun olayı yaptıgınız class ı veri tabanına yukluyor onun fotosunu cekip buraya ekliyor
+
+diger sayı ve mucahitDb olarak yazan da veri tabanı isminiz
+
+cli kodunda yazdıgınız migrations klasöründeki ismi etkiliyor 
+appsetting de verdiğiniz isim veri tabanı isminizi belirliyor aynı olması daha iyi olur karısıklık olmaz 

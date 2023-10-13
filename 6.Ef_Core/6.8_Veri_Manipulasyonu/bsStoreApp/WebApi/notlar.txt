@@ -1,0 +1,32 @@
+ınversion of control ıoc havuz
+
+tip ayarlarını yaptık update yaptık veri tabanını olusturduk 
+
+şimdi de bunları kullanmamız lazım 
+burda araya oic giriyor
+
+burda bir controller a ihtiyacımız var 
+
+Controller klasörüne controller ekleyelim api i secelim 
+
+private readonly RepositoryContext _context;
+
+        public BooksController(RepositoryContext context)
+        {
+            _context = context;
+        }
+
+dependency ınjection DI olarak geçiyor 
+bir kere yazıp program.cs de her yerde kullanmana olanak saglıyor 
+
+RepositoryContext sınıfını gördugunde bunun newlenmesi lazım intance gerekiyor 
+
+ctor uzerınden yapıcı metot uygyulama onu otomatik kendisi yapıyor 
+
+kendisi yapıyor derken program.cs e biz bunu kayıt ettik register yapmıs olduk 
+builder.Services.AddDbContext<RepositoryContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection")));
+
+RepositoryContext uzerınden calıstırmasını sagladık 
+
+ctor a ekleyerekte resolve yani çözme işlemini yapmıs oluyoruz
+

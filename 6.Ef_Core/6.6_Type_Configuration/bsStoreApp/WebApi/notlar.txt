@@ -1,0 +1,21 @@
+Tip configurasyonları 
+
+bu ayarları neden kullanırız 
+
+bazı alanlara defult ayarlar vermek bazı alanları da kısıtlamak için kullanılır 
+yeni çekirdek datalar girmek için bu configrasyonlar ifadeleri kullanılır
+
+
+Repositories içine Config klasörü acalım 
+
+tek varlık nesne class sınıf ne dersen artık hepsi aynı sey
+
+tek class var su anda book onun içinde bookconfig adında class olusturduk
+
+hasdata dan sonra parantez içindeki tooltype ozelliklerini okursan eger params ifadesi yazıyor
+her new book yazıp virgül ile diger new book eklemeye dizi gibi olanak saglayan params oluyor
+istediğin kadar kitap tanımı yapabilirsin
+
+dataları yukledik ama mig aldıgında yuklediğin datalar gelmez boş gözukuyor
+bos gozukmemesi için baglantı kurmamız lazım bookcongif ile context arasında 
+repositorycontext e gidelim

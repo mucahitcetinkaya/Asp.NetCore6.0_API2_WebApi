@@ -1,0 +1,98 @@
+sırada connection string dizisi var 
+
+class ın veri tabanı ile ilişkilendirilmesi için bu ifadeye ihtiyacımız var 
+
+veri tabanı baglantı dizisi context için veri tabanına baglanmanın anahtarı anlamına geliyor 
+
+bunuda ctor uzerınden vereceğiz RepositoryContext e gidelim
+
+ayarları yaptıktan sonra appsettinde baglanacagımız veri tabanı ayarlarını yazmamız lazım 
+
+ms sql ile calısacaksan eger netten de bulabilirsin ne yazacagını 
+veya
+view => SQL Server Object Explorer => 
+
+baglı oldugun veri tabanı gelir ona gir Database e gir 
+
+her hangi bir veri tabanına gir yoksa olustur adı onemli değil degistirirsin
+maksat baglantı dizisini almak sadece 
+
+deneme adında olusturduk 
+sag tık yap properties e bas connection string ifadesini kopyala 
+
+Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=deneme;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False
+
+appsettings e de 
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "sqlConnection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=deneme;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"
+  }
+}
+
+boyle yazacaksın 
+
+biz kolay olsun diye mssql yerine sqlite ile calısacagız 
+
+
+kodu farklı sadece 
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "SqliteConnection": "Data Source=akademiwebDb.db"
+  }
+}
+
+bundan sonra program.cs e gidip yapılandırma kodunu yazalım
+
+builder.Services.AddDbContext<RepositoryContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection")));
+
+sqlite i yuklemen lazım paket WebApi uzerıne sag tık yapıp nuget uzerınden de yukleyebilir sqlite yazıp veya mssql farketmez
+
+terminal ile de yukleme yapabilirsin
+
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Sqlite/7.0.11?_src=template
+
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 6.0.1
+
+aynı olsun diye hepsinde 6.0.1 i yuklüyorum
+
+builder.Services.AddDbContext<RepositoryContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection")));
+bunu yazdıgımızda Inversion of Control (IoC) (kontrolun tersine cevrilmesi) e dbcontext tanımını yapmıs oluyoruz
+
+bu nedemek ?
+
+bir dbcontext e ihtiyacımız oldugun da bir injection yaptıgımızda RepositoryContext in somut haline izin verecek demek 
+bunu program.cs e yazıp her yerden kullanma imkanı veriyor bize 
+buna dependency ınjection (DI) deniyor 
+
+bizim kullandıgımız bir framework var efcore bunun kendi ayarları oluyor middleware vs 
+yazan kişi bu ayarları ozelleştirmek araya girmek isteyebilir
+
+araya girmek derken framework e denir ki control u bana devret dbcontext e baglanması lazım
+mesela kayıt yapılacak Register bunu ıoc dahilinde yapıyoruz conteiner ın için bunu yerleştir ki 
+bunu istediğim zaman cagırabileyim
+
+oda diyoki diyo sen repositorycontex i kayıt ettin bunu cozup bana ver diyebiliyorsun bune Response
+bunun bir yasam döngüsü oluyor buna Dispose
+
+dispose yani bundan 1 tane mi olusturacam her istekse mi bir tane olusturacgım bu bilgileri de verip 
+ilgili nesnenin yasam döngüsüne de karar verebiliyorsun 
+
+bunu yazdık şimdi de istediğimiz yerde bunu enjekte etmek kaldı sadece 
+
+bunuda controller uzerınde yapacagız 
